@@ -20,4 +20,20 @@
     <servlet-name>LoginManager</servlet-name>
     <url-pattern>/LoginManager</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>EmployeeLogout</servlet-name>
+    <servlet-class>EmployeeLogout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeLogout</servlet-name>
+    <url-pattern>/EmployeeLogout</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ManagerLogout</servlet-name>
+    <servlet-class>ManagerLogout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManagerLogout</servlet-name>
+    <url-pattern>/ManagerLogout</url-pattern>
+  </servlet-mapping>
 </web-app>

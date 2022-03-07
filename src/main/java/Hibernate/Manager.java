@@ -1,13 +1,17 @@
 package Hibernate;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Manager {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String email;
-    private String gender;
     private String username;
     private String password;
     private boolean isLogged;
@@ -15,20 +19,18 @@ public class Manager {
     public Manager() {
     }
 
-    public Manager(int id, String name, String email, String gender, String username, String password, boolean isLogged) {
+    public Manager(int id, String name, String email, String username, String password, boolean isLogged) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.gender = gender;
         this.username = username;
         this.password = password;
         this.isLogged = isLogged;
     }
 
-    public Manager(String name, String email, String gender, String username, String password, boolean isLogged) {
+    public Manager(String name, String email, String username, String password, boolean isLogged) {
         this.name = name;
         this.email = email;
-        this.gender = gender;
         this.username = username;
         this.password = password;
         this.isLogged = isLogged;
@@ -56,14 +58,6 @@ public class Manager {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
     }
 
     public String getUsername() {

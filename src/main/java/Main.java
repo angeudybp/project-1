@@ -1,12 +1,10 @@
-import Hibernate.Employee;
-import Hibernate.EmployeeDao;
-import Hibernate.EmployeeDaoImp;
+import Hibernate.*;
 
 public class Main {
     public static void main(String[] args) {
-        EmployeeDao employeeDao = new EmployeeDaoImp();
-        Employee employee = new Employee("Mark","m@gmail.com","male","test","test123",false);
-        employeeDao.addEmployee(employee);
+        ManagerDao managerDao = new ManagerDaoImp();
+        Manager manager = new Manager("Paul","p@gmail.com","ptest","ptest123",false);
+        managerDao.addManager(manager);
 
     }
 }

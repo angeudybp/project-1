@@ -1,6 +1,4 @@
-import Hibernate.Employee;
-import Hibernate.EmployeeDao;
-import Hibernate.EmployeeDaoImp;
+import Hibernate.*;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -12,10 +10,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-public class LoginEmployee extends HttpServlet {
+public class LoginManager extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
+
     }
 
     @Override
@@ -29,34 +28,34 @@ public class LoginEmployee extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        EmployeeDao employeeDao = new EmployeeDaoImp();
+        ManagerDao managerDao = new ManagerDaoImp();
 
-        List<Employee> employees = employeeDao.getEmployees();
-        Employee employee = null;
+        List<Manager> managers = managerDao.getManagers();
+        Manager manager = null;
 
         HttpSession session = req.getSession();
 
-        for (Employee e: employees
+        for (Manager e: managers
         ) {
             if (e.getUsername().equals(username)&&e.getPassword().equals(password))
             {
-                req.getRequestDispatcher("navbarEmployee.html").include(req,resp);
+                req.getRequestDispatcher("navbarManager.html").include(req,resp);
                 session.setAttribute("uname",username);
                 session.setAttribute("id",e.getId());
                 printWriter.println("You've successfully logged in!");
-                employee = e;
+                manager = e;
                 e.setLogged(true);
-                employeeDao.updateEmployee(e);
+                managerDao.updateManager(e);
             }
         }
-        if (employee==null) {
+        if (manager==null) {
 
-            RequestDispatcher requestDispatcher = req.getRequestDispatcher("/loginEmployee.html");
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("/loginManager.html");
             requestDispatcher.include(req, resp);
             printWriter.println("Your credentials are incorrect!");
         }
         printWriter.close();
 
-
     }
+
 }

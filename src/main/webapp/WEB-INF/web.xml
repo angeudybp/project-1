@@ -12,4 +12,12 @@
     <servlet-name>LoginEmployee</servlet-name>
     <url-pattern>/LoginEmployee</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>LoginManager</servlet-name>
+    <servlet-class>LoginManager</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginManager</servlet-name>
+    <url-pattern>/LoginManager</url-pattern>
+  </servlet-mapping>
 </web-app>

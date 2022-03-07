@@ -6,65 +6,63 @@ import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class EmployeeDaoImp implements EmployeeDao{
+public class ReimbursementDaoImp implements ReimbursementDao{
     @Override
-    public void addEmployee(Employee employee) {
+    public void addReimbursement(Reimbursement reimbursement) {
         SessionFactory factory = ConnectionFactory.getConfiguration().buildSessionFactory();
         Session session = factory.openSession();
         Transaction transaction = session.beginTransaction();
 
-        session.persist(employee);
+        session.persist(reimbursement);
         transaction.commit();
         session.close();
     }
 
     @Override
-    public void updateEmployee(Employee employee) {
+    public void updateReimbursement(Reimbursement reimbursement) {
         SessionFactory factory = ConnectionFactory.getConfiguration().buildSessionFactory();
         Session session = factory.openSession();
         Transaction transaction = session.beginTransaction();
 
-        session.update(employee);
-        transaction.commit();
-        session.close();
-
-
-    }
-
-    @Override
-    public void deleteEmployee(int id) {
-
-        SessionFactory factory = ConnectionFactory.getConfiguration().buildSessionFactory();
-        Session session = factory.openSession();
-        Transaction transaction = session.beginTransaction();
-        session.delete(getEmployeeById(id));
+        session.update(reimbursement);
         transaction.commit();
         session.close();
 
     }
 
     @Override
-    public List<Employee> getEmployees() {
-        List<Employee> employees;
+    public void deleteReimbursement(int id) {
         SessionFactory factory = ConnectionFactory.getConfiguration().buildSessionFactory();
         Session session = factory.openSession();
         Transaction transaction = session.beginTransaction();
-        employees = session.createQuery("from Employee",Employee.class).list();
+        session.delete(getReimbursementById(id));
         transaction.commit();
         session.close();
 
-        return employees;
     }
 
     @Override
-    public Employee getEmployeeById(int id) {
+    public List<Reimbursement> getReimbursement() {
+        List<Reimbursement> reimbursements;
         SessionFactory factory = ConnectionFactory.getConfiguration().buildSessionFactory();
         Session session = factory.openSession();
         Transaction transaction = session.beginTransaction();
-        Employee employee = session.find(Employee.class,id);
+        reimbursements = session.createQuery("from Reimbursement",Reimbursement.class).list();
         transaction.commit();
         session.close();
 
-        return employee;
+        return reimbursements;
+    }
+
+    @Override
+    public Reimbursement getReimbursementById(int id) {
+        SessionFactory factory = ConnectionFactory.getConfiguration().buildSessionFactory();
+        Session session = factory.openSession();
+        Transaction transaction = session.beginTransaction();
+        Reimbursement reimbursement = session.find(Reimbursement.class,id);
+        transaction.commit();
+        session.close();
+
+        return reimbursement;
     }
 }

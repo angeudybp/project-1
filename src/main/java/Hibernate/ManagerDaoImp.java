@@ -6,65 +6,61 @@ import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class EmployeeDaoImp implements EmployeeDao{
+public class ManagerDaoImp implements ManagerDao{
     @Override
-    public void addEmployee(Employee employee) {
+    public void addManager(Manager manager) {
         SessionFactory factory = ConnectionFactory.getConfiguration().buildSessionFactory();
         Session session = factory.openSession();
         Transaction transaction = session.beginTransaction();
 
-        session.persist(employee);
+        session.persist(manager);
         transaction.commit();
         session.close();
     }
 
     @Override
-    public void updateEmployee(Employee employee) {
+    public void updateManager(Manager manager) {
         SessionFactory factory = ConnectionFactory.getConfiguration().buildSessionFactory();
         Session session = factory.openSession();
         Transaction transaction = session.beginTransaction();
 
-        session.update(employee);
+        session.update(manager);
         transaction.commit();
         session.close();
-
-
     }
 
     @Override
-    public void deleteEmployee(int id) {
-
+    public void deleteManager(int id) {
         SessionFactory factory = ConnectionFactory.getConfiguration().buildSessionFactory();
         Session session = factory.openSession();
         Transaction transaction = session.beginTransaction();
-        session.delete(getEmployeeById(id));
+        session.delete(getManagerById(id));
         transaction.commit();
         session.close();
-
     }
 
     @Override
-    public List<Employee> getEmployees() {
-        List<Employee> employees;
+    public List<Manager> getManagers() {
+        List<Manager> managers;
         SessionFactory factory = ConnectionFactory.getConfiguration().buildSessionFactory();
         Session session = factory.openSession();
         Transaction transaction = session.beginTransaction();
-        employees = session.createQuery("from Employee",Employee.class).list();
+        managers = session.createQuery("from Manager",Manager.class).list();
         transaction.commit();
         session.close();
 
-        return employees;
+        return managers;
     }
 
     @Override
-    public Employee getEmployeeById(int id) {
+    public Manager getManagerById(int id) {
         SessionFactory factory = ConnectionFactory.getConfiguration().buildSessionFactory();
         Session session = factory.openSession();
         Transaction transaction = session.beginTransaction();
-        Employee employee = session.find(Employee.class,id);
+        Manager manager= session.find(Manager.class,id);
         transaction.commit();
         session.close();
 
-        return employee;
+        return manager;
     }
 }

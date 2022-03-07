@@ -5,5 +5,11 @@ public class DaoFactory {
     private DaoFactory(){
 
     }
+    public static EmployeeDao getEmployeeDao(){
+        if (employeeDao==null){
+            employeeDao = new EmployeeDaoImp();
+        }
+        return employeeDao;
+    }
 
 }

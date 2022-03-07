@@ -4,4 +4,12 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <servlet-name>LoginEmployee</servlet-name>
+    <servlet-class>LoginEmployee</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginEmployee</servlet-name>
+    <url-pattern>/LoginEmployee</url-pattern>
+  </servlet-mapping>
 </web-app>

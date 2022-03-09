@@ -5,43 +5,51 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
-    <servlet-name>LoginEmployee</servlet-name>
-    <servlet-class>LoginEmployee</servlet-class>
+    <servlet-name>Servlets.LoginEmployee</servlet-name>
+    <servlet-class>Servlets.LoginEmployee</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>LoginEmployee</servlet-name>
-    <url-pattern>/LoginEmployee</url-pattern>
+    <servlet-name>Servlets.LoginEmployee</servlet-name>
+    <url-pattern>/Servlets.LoginEmployee</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>LoginManager</servlet-name>
-    <servlet-class>LoginManager</servlet-class>
+    <servlet-name>Servlets.LoginManager</servlet-name>
+    <servlet-class>Servlets.LoginManager</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>LoginManager</servlet-name>
-    <url-pattern>/LoginManager</url-pattern>
+    <servlet-name>Servlets.LoginManager</servlet-name>
+    <url-pattern>/Servlets.LoginManager</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>EmployeeLogout</servlet-name>
-    <servlet-class>EmployeeLogout</servlet-class>
+    <servlet-name>Servlets.EmployeeLogout</servlet-name>
+    <servlet-class>Servlets.EmployeeLogout</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>EmployeeLogout</servlet-name>
-    <url-pattern>/EmployeeLogout</url-pattern>
+    <servlet-name>Servlets.EmployeeLogout</servlet-name>
+    <url-pattern>/Servlets.EmployeeLogout</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>ManagerLogout</servlet-name>
-    <servlet-class>ManagerLogout</servlet-class>
+    <servlet-name>Servlets.ManagerLogout</servlet-name>
+    <servlet-class>Servlets.ManagerLogout</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ManagerLogout</servlet-name>
-    <url-pattern>/ManagerLogout</url-pattern>
+    <servlet-name>Servlets.ManagerLogout</servlet-name>
+    <url-pattern>/Servlets.ManagerLogout</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>EmployeeServlet</servlet-name>
-    <servlet-class>EmployeeServlet</servlet-class>
+    <servlet-name>Servlets.EmployeeServlet</servlet-name>
+    <servlet-class>Servlets.EmployeeServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>EmployeeServlet</servlet-name>
-    <url-pattern>/EmployeeServlet</url-pattern>
+    <servlet-name>Servlets.EmployeeServlet</servlet-name>
+    <url-pattern>/Servlets.EmployeeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>EmployeeProfile</servlet-name>
+    <servlet-class>Servlets.EmployeeProfile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeProfile</servlet-name>
+    <url-pattern>/Servlets.EmployeeProfile</url-pattern>
   </servlet-mapping>
 </web-app>

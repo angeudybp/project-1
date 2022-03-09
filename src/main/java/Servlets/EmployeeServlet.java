@@ -1,3 +1,5 @@
+package Servlets;
+
 import Hibernate.Employee;
 import Hibernate.EmployeeDao;
 import Hibernate.EmployeeDaoImp;
@@ -17,10 +19,10 @@ public class EmployeeServlet extends HttpServlet {
         HttpSession session = req.getSession();
 
         PrintWriter out = resp.getWriter();
-        String username = (String) session.getAttribute("uname");
         int id = (Integer)session.getAttribute("id");
         EmployeeDao employeeDao = new EmployeeDaoImp();
         Employee employee = employeeDao.getEmployeeById(id);
+
         req.getRequestDispatcher("navbarEmployee.html").include(req,resp);
         out.println("<!doctype html>\n" +
                 "<html lang=\"en\">\n" +
@@ -40,17 +42,13 @@ public class EmployeeServlet extends HttpServlet {
                 "</body>\n" +
                 "</html>");
 
+
         out.close();
 
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-
-
-
-
 
 
     }

@@ -1,3 +1,5 @@
+package Servlets;
+
 import Hibernate.*;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;

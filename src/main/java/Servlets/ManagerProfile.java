@@ -1,8 +1,6 @@
 package Servlets;
 
-import Hibernate.Employee;
-import Hibernate.EmployeeDao;
-import Hibernate.EmployeeDaoImp;
+import Hibernate.*;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -13,8 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Objects;
 
-public class EmployeeProfile extends HttpServlet {
-
+public class ManagerProfile extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
@@ -24,10 +21,10 @@ public class EmployeeProfile extends HttpServlet {
 
         PrintWriter out = resp.getWriter();
         int id = (Integer)session.getAttribute("id");
-        EmployeeDao employeeDao = new EmployeeDaoImp();
-        Employee employee = employeeDao.getEmployeeById(id);
+        ManagerDao managerDao = new ManagerDaoImp();
+        Manager manager = managerDao.getManagerById(id);
 
-        req.getRequestDispatcher("navbarEmployee.html").include(req,resp);
+        req.getRequestDispatcher("navbarManager.html").include(req,resp);
         out.println("<html lang=\"en\"><head>\n" +
                 "    <meta charset=\"UTF-8\">\n" +
                 "    <meta name=\"viewport\" content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">\n" +
@@ -41,19 +38,19 @@ public class EmployeeProfile extends HttpServlet {
                 "<div class=\"container rounded bg-secondary mt-5 mb-5\">\n" +
                 "    <div class=\"row\">\n" +
                 "        <div class=\"col-md-3 border-right\">\n" +
-                "            <div class=\"d-flex flex-column align-items-center text-center p-3 py-5\"><img class=\"rounded-circle mt-5\" width=\"150px\" src=\"https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg\"><span class=\"font-weight-bold\">"+employee.getName()+"</span><span class=\"text-black-50\">"+employee.getEmail()+"</span><span> </span></div>\n" +
+                "            <div class=\"d-flex flex-column align-items-center text-center p-3 py-5\"><img class=\"rounded-circle mt-5\" width=\"150px\" src=\"https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg\"><span class=\"font-weight-bold\">"+manager.getName()+"</span><span class=\"text-black-50\">"+manager.getEmail()+"</span><span> </span></div>\n" +
                 "        </div>\n" +
                 "        <div class=\"col-md-5 border-right\">\n" +
                 "            <div class=\"p-3 py-5\">\n" +
                 "                <div class=\"d-flex justify-content-between align-items-center mb-3\">\n" +
                 "                    <h4 class=\"text-right\">Profile Settings</h4>\n" +
                 "                </div>\n" +
-                "                <form action='Servlets.EmployeeProfile' method='post'>\n" +
+                "                <form action='Servlets.ManagerProfile' method='post'>\n" +
                 "                    <div class=\"row mt-3\">\n" +
-                "                        <div class=\"col-md-12\"><label class=\"labels\">Name</label><input type=\"text\" name='name' class=\"form-control\"  value='"+employee.getName()+"'></div>\n" +
-                "                        <div class=\"col-md-12\"><label class=\"labels\">Email</label><input type=\"text\" name='email' class=\"form-control\" value='"+employee.getEmail()+"'></div>\n"
+                "                        <div class=\"col-md-12\"><label class=\"labels\">Name</label><input type=\"text\" name='name' class=\"form-control\"  value='"+manager.getName()+"'></div>\n" +
+                "                        <div class=\"col-md-12\"><label class=\"labels\">Email</label><input type=\"text\" name='email' class=\"form-control\" value='"+manager.getEmail()+"'></div>\n"
         );
-        if (employee.getGender().equals("female")){
+        if (manager.getGender().equals("female")){
             out.println("                        <div class=\"col-md-12\">\n" +
                     "                            <label class=\"labels\">Gender: </label>\n" +
                     "                            <input type=\"checkbox\" name=\"male\" id=\"male\"> <label class=\"labels\" for=\"male\">Male</label>\n" +
@@ -87,14 +84,13 @@ public class EmployeeProfile extends HttpServlet {
 
 
         out.close();
-
     }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
-        EmployeeDao employeeDao = new EmployeeDaoImp();
+        ManagerDao managerDao = new ManagerDaoImp();
         HttpSession session = req.getSession();
 
         String name = req.getParameter("name");
@@ -111,16 +107,14 @@ public class EmployeeProfile extends HttpServlet {
             gender = "undefined";
         }
         int id = (Integer)session.getAttribute("id");
-        Employee employee = employeeDao.getEmployeeById(id);
+        Manager manager = managerDao.getManagerById(id);
 
-        employee.setName(name);
-        employee.setEmail(email);
-        employee.setGender(gender);
-        employeeDao.updateEmployee(employee);
-        req.getRequestDispatcher("navbarEmployee.html").include(req,resp);
-        out.println("Employee updated successfully!");
+        manager.setName(name);
+        manager.setEmail(email);
+        manager.setGender(gender);
+        managerDao.updateManager(manager);
+        req.getRequestDispatcher("navbarManager.html").include(req,resp);
+        out.println("Manager updated successfully!");
         out.close();
     }
-
-
 }

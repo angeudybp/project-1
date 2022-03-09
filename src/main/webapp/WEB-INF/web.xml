@@ -52,4 +52,20 @@
     <servlet-name>EmployeeProfile</servlet-name>
     <url-pattern>/Servlets.EmployeeProfile</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>Servlets.ManagerServlet</servlet-name>
+    <servlet-class>Servlets.ManagerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlets.ManagerServlet</servlet-name>
+    <url-pattern>/Servlets.ManagerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Servlets.ManagerProfile</servlet-name>
+    <servlet-class>Servlets.ManagerProfile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlets.ManagerProfile</servlet-name>
+    <url-pattern>/Servlets.ManagerProfile</url-pattern>
+  </servlet-mapping>
 </web-app>

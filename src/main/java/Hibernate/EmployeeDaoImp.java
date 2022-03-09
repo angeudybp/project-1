@@ -7,6 +7,7 @@ import org.hibernate.Transaction;
 import java.util.List;
 
 public class EmployeeDaoImp implements EmployeeDao{
+
     @Override
     public void addEmployee(Employee employee) {
         SessionFactory factory = ConnectionFactory.getConfiguration().buildSessionFactory();

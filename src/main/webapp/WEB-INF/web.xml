@@ -114,6 +114,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>Servlets.AddReimbursement</servlet-name>
-    <url-pattern>Servlets.AddReimbursement</url-pattern>
+    <url-pattern>/Servlets.AddReimbursement</url-pattern>
   </servlet-mapping>
 </web-app>

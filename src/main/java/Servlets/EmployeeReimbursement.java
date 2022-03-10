@@ -24,7 +24,7 @@ public class EmployeeReimbursement extends HttpServlet {
         List<Reimbursement> list = reimbursementDao.getReimbursement();
 
 
-        req.getRequestDispatcher("navbarManager.html").include(req,resp);
+        req.getRequestDispatcher("navbarEmployee.html").include(req,resp);
         out.println("<!doctype html>\n" +
                 "<html lang=\"en\">\n" +
                 "<head>\n" +

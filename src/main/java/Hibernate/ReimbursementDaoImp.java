@@ -16,7 +16,7 @@ public class ReimbursementDaoImp implements ReimbursementDao{
         Session session = factory.openSession();
         Transaction transaction = session.beginTransaction();
 
-        session.save(employee);
+        session.update(employee);
         session.save(reimbursement);
         transaction.commit();
         session.close();

@@ -116,4 +116,36 @@
     <servlet-name>Servlets.AddReimbursement</servlet-name>
     <url-pattern>/Servlets.AddReimbursement</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>Servlets.ReimbursementList</servlet-name>
+    <servlet-class>Servlets.ReimbursementList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlets.ReimbursementList</servlet-name>
+    <url-pattern>/Servlets.ReimbursementList</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Servlets.ApproveReimbursement</servlet-name>
+    <servlet-class>Servlets.ApproveReimbursement</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlets.ApproveReimbursement</servlet-name>
+    <url-pattern>/Servlets.ApproveReimbursement</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Servlets.DenyReimbursement</servlet-name>
+    <servlet-class>Servlets.DenyReimbursement</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlets.DenyReimbursement</servlet-name>
+    <url-pattern>/Servlets.DenyReimbursement</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Servlets.FindReimbursement</servlet-name>
+    <servlet-class>Servlets.FindReimbursement</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlets.FindReimbursement</servlet-name>
+    <url-pattern>/Servlets.FindReimbursement</url-pattern>
+  </servlet-mapping>
 </web-app>

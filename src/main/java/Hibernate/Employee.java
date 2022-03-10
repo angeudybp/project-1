@@ -1,9 +1,10 @@
 package Hibernate;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class Employee {
     @Id
@@ -15,8 +16,9 @@ public class Employee {
     private String username;
     private String password;
     private boolean isLogged;
-    private double reimbursement;
-    private String reimbursementStatus;
+    @OneToMany
+    List<Reimbursement> reimbursements = new ArrayList<Reimbursement>();
+
     public Employee() {
     }
 
@@ -40,25 +42,23 @@ public class Employee {
         this.isLogged = isLogged;
     }
 
-    public double reimbursementRequest(double amount){
-        reimbursementStatus = "pending";
-        return amount;
+    public Employee(int id, String name, String email, String gender, String username, String password, boolean isLogged, List<Reimbursement> reimbursements) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.gender = gender;
+        this.username = username;
+        this.password = password;
+        this.isLogged = isLogged;
+        this.reimbursements = reimbursements;
     }
 
-    public double getReimbursement() {
-        return reimbursement;
+    public List<Reimbursement> getReimbursements() {
+        return reimbursements;
     }
 
-    public void setReimbursement(double reimbursement) {
-        this.reimbursement = reimbursement;
-    }
-
-    public String getReimbursementStatus() {
-        return reimbursementStatus;
-    }
-
-    public void setReimbursementStatus(String reimbursementStatus) {
-        this.reimbursementStatus = reimbursementStatus;
+    public void setReimbursements(List<Reimbursement> reimbursements) {
+        this.reimbursements = reimbursements;
     }
 
     public boolean isLogged() {

@@ -14,7 +14,7 @@ public class EmployeeDaoImp implements EmployeeDao{
         Session session = factory.openSession();
         Transaction transaction = session.beginTransaction();
 
-        session.persist(employee);
+        session.save(employee);
         transaction.commit();
         session.close();
     }

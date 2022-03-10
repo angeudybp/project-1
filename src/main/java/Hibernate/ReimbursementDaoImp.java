@@ -7,13 +7,17 @@ import org.hibernate.Transaction;
 import java.util.List;
 
 public class ReimbursementDaoImp implements ReimbursementDao{
+
     @Override
-    public void addReimbursement(Reimbursement reimbursement) {
+    public void addReimbursement(Reimbursement reimbursement, int id) {
+        EmployeeDao employeeDao = new EmployeeDaoImp();
+        Employee employee = employeeDao.getEmployeeById(id);
         SessionFactory factory = ConnectionFactory.getConfiguration().buildSessionFactory();
         Session session = factory.openSession();
         Transaction transaction = session.beginTransaction();
 
-        session.persist(reimbursement);
+        session.save(employee);
+        session.save(reimbursement);
         transaction.commit();
         session.close();
     }

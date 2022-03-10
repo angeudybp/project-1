@@ -9,9 +9,15 @@ public class Reimbursement {
     int transactionId;
     double amount;
     String status;
+    @ManyToOne
     Employee employee;
 
     public Reimbursement() {
+    }
+
+    public Reimbursement(double amount, String status) {
+        this.amount = amount;
+        this.status = status;
     }
 
     public Reimbursement(int transactionId, double amount, String status, Employee employee) {
@@ -27,16 +33,8 @@ public class Reimbursement {
         this.employee = employee;
     }
 
-    public void approveReimbursement(double amount){
-        if (amount>0) {
-            employee.setReimbursementStatus("Approved");
-            employee.setReimbursement(amount);
-        }
-    }
 
-    public void denyReimbursement(){
-        employee.setReimbursementStatus("Denied");
-    }
+
 
     public int getTransactionId() {
         return transactionId;

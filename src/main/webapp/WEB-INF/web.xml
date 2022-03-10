@@ -100,4 +100,20 @@
     <servlet-name>Servlets.DeleteEmployee</servlet-name>
     <url-pattern>/Servlets.DeleteEmployee</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>Servlets.EmployeeReimbursement</servlet-name>
+    <servlet-class>Servlets.EmployeeReimbursement</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlets.EmployeeReimbursement</servlet-name>
+    <url-pattern>/Servlets.EmployeeReimbursement</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Servlets.AddReimbursement</servlet-name>
+    <servlet-class>Servlets.AddReimbursement</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlets.AddReimbursement</servlet-name>
+    <url-pattern>Servlets.AddReimbursement</url-pattern>
+  </servlet-mapping>
 </web-app>

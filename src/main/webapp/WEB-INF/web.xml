@@ -68,4 +68,28 @@
     <servlet-name>Servlets.ManagerProfile</servlet-name>
     <url-pattern>/Servlets.ManagerProfile</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>Servlets.EmployeeList</servlet-name>
+    <servlet-class>Servlets.EmployeeList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlets.EmployeeList</servlet-name>
+    <url-pattern>/Servlets.EmployeeList</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Servlets.AddEmployee</servlet-name>
+    <servlet-class>Servlets.AddEmployee</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlets.AddEmployee</servlet-name>
+    <url-pattern>/Servlets.AddEmployee</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Servlets.UpdateEmployee</servlet-name>
+    <servlet-class>Servlets.UpdateEmployee</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlets.UpdateEmployee</servlet-name>
+    <url-pattern>/Servlets.UpdateEmployee</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -92,4 +92,12 @@
     <servlet-name>Servlets.UpdateEmployee</servlet-name>
     <url-pattern>/Servlets.UpdateEmployee</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>Servlets.DeleteEmployee</servlet-name>
+    <servlet-class>Servlets.DeleteEmployee</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlets.DeleteEmployee</servlet-name>
+    <url-pattern>/Servlets.DeleteEmployee</url-pattern>
+  </servlet-mapping>
 </web-app>

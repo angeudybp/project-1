@@ -58,7 +58,7 @@ public class DeleteEmployee extends HttpServlet {
 
         employeeDao.deleteEmployee(id);
         req.getRequestDispatcher("navbarManager.html").include(req,resp);
-        out.println("Employee deleted successfully!");
+        out.println("<p>Employee deleted successfully!</p>");
         out.close();
     }
 }

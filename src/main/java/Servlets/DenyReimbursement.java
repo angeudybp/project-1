@@ -56,7 +56,7 @@ public class DenyReimbursement extends HttpServlet {
         reimbursement.setStatus("Denied");
         reimbursementDao.updateReimbursement(reimbursement);
         req.getRequestDispatcher("navbarManager.html").include(req,resp);
-        out.println("Reimbursement Denied successfully!");
+        out.println("<p>Reimbursement Denied successfully!</p>");
         out.close();
     }
 }

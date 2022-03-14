@@ -118,7 +118,7 @@ public class EmployeeProfile extends HttpServlet {
         employee.setGender(gender);
         employeeDao.updateEmployee(employee);
         req.getRequestDispatcher("navbarEmployee.html").include(req,resp);
-        out.println("Employee updated successfully!");
+        out.println("<p>Employee updated successfully!</p>");
         out.close();
     }
 

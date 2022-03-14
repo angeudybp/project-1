@@ -45,7 +45,7 @@ public class LoginEmployee extends HttpServlet {
                 req.getRequestDispatcher("navbarEmployee.html").include(req,resp);
                 session.setAttribute("uname",username);
                 session.setAttribute("id",e.getId());
-                printWriter.println("You've successfully logged in!");
+                printWriter.println("<p>You've successfully logged in!</p>");
                 employee = e;
                 e.setLogged(true);
                 employeeDao.updateEmployee(e);

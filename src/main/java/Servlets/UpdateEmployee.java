@@ -88,7 +88,7 @@ public class UpdateEmployee extends HttpServlet {
 
         employeeDao.updateEmployee(employee);
         req.getRequestDispatcher("navbarManager.html").include(req,resp);
-        out.println("Employee updated successfully!");
+        out.println("<p>Employee updated successfully!</p>");
         out.close();
     }
 }

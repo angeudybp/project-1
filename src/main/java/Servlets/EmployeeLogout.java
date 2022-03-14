@@ -32,7 +32,7 @@ public class EmployeeLogout extends HttpServlet {
 
         session.setAttribute("uname","");
         session.setAttribute("id",0);
-        printWriter.println("You Successfully logged out!");
+        printWriter.println("<p>You Successfully logged out!</p>");
         printWriter.close();
     }
 

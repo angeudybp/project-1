@@ -47,7 +47,7 @@ public class AddEmployee extends HttpServlet {
 
 
 
-        out.print("Records Saved successfully!");
+        out.print("<p>Records Saved successfully!</p>");
         out.close();
     }
 }

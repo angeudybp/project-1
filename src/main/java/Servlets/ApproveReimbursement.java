@@ -54,7 +54,7 @@ public class ApproveReimbursement extends HttpServlet {
         reimbursement.setStatus("Approved");
         reimbursementDao.updateReimbursement(reimbursement);
         req.getRequestDispatcher("navbarManager.html").include(req,resp);
-        out.println("Reimbursement Approved successfully!");
+        out.println("<p>Reimbursement Approved successfully!</p>");
         out.close();
     }
 }

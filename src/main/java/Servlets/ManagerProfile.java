@@ -114,7 +114,7 @@ public class ManagerProfile extends HttpServlet {
         manager.setGender(gender);
         managerDao.updateManager(manager);
         req.getRequestDispatcher("navbarManager.html").include(req,resp);
-        out.println("Manager updated successfully!");
+        out.println("<p>Manager updated successfully!</p>");
         out.close();
     }
 }

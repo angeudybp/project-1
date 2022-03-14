@@ -32,7 +32,7 @@ public class AddReimbursement extends HttpServlet {
         EmployeeDao employeeDao = new EmployeeDaoImp();
         Reimbursement reimbursement = new Reimbursement(amount,"pending",employeeDao.getEmployeeById(id));
         reimbursementDao.addReimbursement(reimbursement,id);
-        out.println("Reimbursement added successfully!");
+        out.println("<p>Reimbursement added successfully!</p>");
         out.close();
 
 

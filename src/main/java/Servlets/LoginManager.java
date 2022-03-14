@@ -44,7 +44,7 @@ public class LoginManager extends HttpServlet {
                 req.getRequestDispatcher("navbarManager.html").include(req,resp);
                 session.setAttribute("uname",username);
                 session.setAttribute("id",e.getId());
-                printWriter.println("You've successfully logged in!");
+                printWriter.println("<p>You've successfully logged in!</p>");
                 manager = e;
                 e.setLogged(true);
                 managerDao.updateManager(e);

@@ -37,8 +37,8 @@ public class EmployeeProfile extends HttpServlet {
                 "    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">\n" +
                 "\n" +
                 "</head>\n" +
-                "<body>\n" +
-                "<div class=\"container rounded bg-secondary mt-5 mb-5\">\n" +
+                "<body class='bg-secondary'>\n" +
+                "<div class=\"container rounded bg-light mt-5 mb-5\">\n" +
                 "    <div class=\"row\">\n" +
                 "        <div class=\"col-md-3 border-right\">\n" +
                 "            <div class=\"d-flex flex-column align-items-center text-center p-3 py-5\"><img class=\"rounded-circle mt-5\" width=\"150px\" src=\"https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg\"><span class=\"font-weight-bold\">"+employee.getName()+"</span><span class=\"text-black-50\">"+employee.getEmail()+"</span><span> </span></div>\n" +

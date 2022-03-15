@@ -37,11 +37,11 @@ public class ManagerServlet extends HttpServlet {
                 "    <link rel=\"stylesheet\" href=\"css/style.css\">\n" +
                 "    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css\" integrity=\"sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn\" crossorigin=\"anonymous\">" +
                 "</head>\n" +
-                "<body>\n" +
+                "<body class='bg-secondary'>\n" +
                 " <div class=\"jumbotron jumbotron-fluid\">\n" +
                 "  <div class=\"container\">\n" +
-                "    <h1 class=\"display-4\">Welcome "+manager.getName()+"</h1>\n" +
-                "    <p class=\"lead\">Welcome to the homepage.</p>\n" +
+                "    <h1 class=\"display-4 text-dark\">Welcome "+manager.getName()+"</h1>\n" +
+                "    <p class=\"lead text-dark\">Welcome to the homepage.</p>\n" +
                 "  </div>\n" +
                 "</div>" +
                 "\n" +
